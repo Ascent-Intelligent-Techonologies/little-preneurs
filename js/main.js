@@ -10,6 +10,14 @@
     if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
   });
 
+  // Show the header logo only once the big hero logo has scrolled away
+  const heroBrand = document.querySelector('.hero__brand');
+  if (heroBrand && 'IntersectionObserver' in window) {
+    document.body.classList.add('at-top');
+    new IntersectionObserver(([e]) => document.body.classList.toggle('at-top', e.isIntersecting))
+      .observe(heroBrand);
+  }
+
   // Click-to-load video embeds (Instagram + YouTube) – keeps page fast & private until played
   document.querySelectorAll('[data-embed]').forEach(box => {
     const btn = box.querySelector('.play');
