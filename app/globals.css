@@ -47,8 +47,6 @@ h2{font-size:clamp(38px,6vw,72px);margin:14px 0 18px}
 .btn--small{padding:9px 18px;font-size:14px;color:#fff!important;opacity:1!important}
 .btn--ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
 .btn--ghost:hover{box-shadow:none;background:var(--ink);color:#fff}
-.nav__logo{transition:opacity .3s}
-body.at-top .nav__logo{opacity:0;pointer-events:none}
 .pill{white-space:nowrap;display:inline-block;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;border-radius:999px;text-decoration:none}
 .pill--dark{background:var(--ink);color:#fff}.pill--yellow{background:var(--yellow);color:var(--ink)}
 

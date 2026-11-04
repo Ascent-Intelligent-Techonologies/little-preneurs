@@ -30,20 +30,6 @@ export default function SiteEffects() {
       });
     }
 
-    // Show the header logo only once the big hero logo has scrolled away
-    const heroBrand = document.querySelector(".hero__brand");
-    if (heroBrand && "IntersectionObserver" in window) {
-      document.body.classList.add("at-top");
-      const io = new IntersectionObserver(([e]) =>
-        document.body.classList.toggle("at-top", e.isIntersecting)
-      );
-      io.observe(heroBrand);
-      cleanups.push(() => {
-        io.disconnect();
-        document.body.classList.remove("at-top");
-      });
-    }
-
     // Click-to-load video embeds (Instagram + YouTube)
     document.querySelectorAll<HTMLElement>("[data-embed]").forEach((box) => {
       const btn = box.querySelector(".play");
