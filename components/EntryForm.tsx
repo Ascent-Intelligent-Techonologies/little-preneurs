@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import EventPass from "./EventPass";
+import StallThanks from "./StallThanks";
 import WelcomeNote from "./WelcomeNote";
 import { DEFAULT_COUNTRY_CODE, type Entry, type EntryKind, type TableType } from "@/utils/entry";
 import { EVENT } from "@/utils/event";
@@ -98,18 +99,26 @@ export default function EntryForm({
   };
 
   if (created) {
+    // Public stall registrations don't get a pass; they're sent to the point of contact.
+    const stallThanks = isGuestFlow && created.kind === "stall";
     return (
       <div ref={topRef} className="stack" style={{ scrollMarginTop: 24 }}>
-        {isGuestFlow ? (
-          <WelcomeNote entry={created} />
+        {stallThanks ? (
+          <StallThanks entry={created} />
         ) : (
-          <div className="alert-ok">
-            Registered <strong>{created.stall_name || created.name}</strong>. Hand over or print the pass below.
-          </div>
+          <>
+            {isGuestFlow ? (
+              <WelcomeNote entry={created} />
+            ) : (
+              <div className="alert-ok">
+                Registered <strong>{created.stall_name || created.name}</strong>. Hand over or print the pass below.
+              </div>
+            )}
+            <EventPass entry={created} />
+          </>
         )}
-        <EventPass entry={created} />
         <button type="button" onClick={() => setCreated(null)} className={isGuestFlow ? "linkbtn" : "btn btn--ghost btn--block"}>
-          {isGuestFlow ? "Register someone else" : "Register another"}
+          {isGuestFlow ? (stallThanks ? "Register another stall" : "Register someone else") : "Register another"}
         </button>
       </div>
     );
@@ -219,7 +228,11 @@ export default function EntryForm({
       </div>
 
       <button type="submit" disabled={loading} className="btn btn--block">
-        {loading ? "Creating your pass…" : isGuestFlow ? "Get my pass" : "Register & generate pass"}
+        {loading
+          ? isStall && isGuestFlow ? "Submitting…" : "Creating your pass…"
+          : isGuestFlow
+            ? isStall ? "Submit stall details" : "Get my pass"
+            : "Register & generate pass"}
       </button>
     </form>
   );

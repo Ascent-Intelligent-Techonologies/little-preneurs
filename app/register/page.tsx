@@ -24,8 +24,8 @@ export default async function RegisterPage({
       <Snowfall />
       <PublicBar />
       <main className="app__main">
-        <PageHeader eyebrow={`${EVENT.edition} · ${EVENT.dateShort}, ${EVENT.hours}`} title="Get your QR pass">
-          {EVENT.venue}, {EVENT.city} · Ages {EVENT.ages}. Visiting, or running a stall? Pick one below.
+        <PageHeader eyebrow={`${EVENT.edition} · ${EVENT.dateShort}, ${EVENT.hours}`} title="Register for Season 02">
+          {EVENT.venue}, {EVENT.city} · Ages {EVENT.ages}. Visitors get a QR pass right away. Running a stall? Share your details and we&apos;ll be in touch.
         </PageHeader>
 
         {EVENT.registrationOpen ? (

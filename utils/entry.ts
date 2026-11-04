@@ -175,3 +175,23 @@ export function cleanEntryInput(
 
   return out;
 }
+
+// A wa.me link to the stall point of contact, pre-filled with the details
+// from the registration form.
+export function stallWhatsAppUrl(
+  e: Pick<Entry, "name" | "email" | "number" | "stall_name" | "category" | "table_type"> &
+    Pick<Entry, "child_name" | "child_age" | "child2_name" | "child2_age">
+): string {
+  const lines = [
+    `Hi ${EVENT.contact.name}, I've just registered a stall for ${EVENT.name} ${EVENT.editionShort} (${EVENT.dateShort}, ${EVENT.venue}).`,
+    "",
+    `Stall / brand: ${e.stall_name ?? ""}`,
+    `Category: ${e.category ?? ""}`,
+    `Table: ${e.table_type === "shared" ? "2 children / 1 shared table" : "1 child / 1 table"}`,
+    `${e.table_type === "shared" ? "Children" : "Child"}: ${childrenLabel(e)}`,
+    `Parent / guardian: ${e.name}`,
+    `Phone: ${formatPhone(e.number)}`,
+    `Email: ${e.email}`,
+  ];
+  return `https://wa.me/${EVENT.contact.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
+}

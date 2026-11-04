@@ -35,4 +35,6 @@ export const EVENT = {
   minAge: 4,
   maxAge: 16,
   instagram: "@littlepreneurs.kids",
+  // Point of contact for stall registrations.
+  contact: { name: "Priyanjana", phone: "+91 86384 92358", tel: "+918638492358", whatsapp: "918638492358" },
 } as const;

@@ -423,3 +423,10 @@ button.item:hover,.item.sel{background:#f5efe3}
   .btns2{grid-template-columns:1fr}
   .item{padding:12px}
 }
+
+/* Stall point of contact */
+.contact{margin-top:20px;padding:18px;border-radius:16px;background:#fff;border:1px solid var(--line);text-align:center}
+.contact__name{font-family:var(--f-head);font-size:28px;line-height:1.1;margin-top:4px;color:var(--ink)}
+.contact__phone{display:inline-block;margin:6px 0 14px;font-family:var(--f-mono);font-size:18px;letter-spacing:.06em;color:var(--red);text-decoration:none}
+.contact__phone:hover{text-decoration:underline}
+.contact .field-hint{margin-top:10px}
