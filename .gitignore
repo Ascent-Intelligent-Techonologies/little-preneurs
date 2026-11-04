@@ -1,2 +1,9 @@
 .DS_Store
 .claude/
+node_modules/
+.next/
+.env*
+!.env.example
+.vercel
+*.tsbuildinfo
+next-env.d.ts
