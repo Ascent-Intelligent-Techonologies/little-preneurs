@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteEffects from "@/components/SiteEffects";
+import Snowfall from "@/components/Snowfall";
 
 export const metadata: Metadata = {
   title: "Littlepreneurs Season 02 · Christmas Special · T-Works Hyderabad",
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <SiteEffects />
+      <Snowfall />
 <div id="top" />
 <header className="nav">
   <a className="nav__logo" href="#top" aria-label="Littlepreneurs home, by Late Checkout and Dolce Amore"><img src="/assets/img/logo.webp" alt="LittlePreneurs" width="150" height="50" /><span>By Late Checkout + Dolce Amore</span></a>
