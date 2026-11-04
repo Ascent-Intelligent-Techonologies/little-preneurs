@@ -5,7 +5,7 @@
   --f-head:'Outfit',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'Space Grotesk',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -72,7 +72,7 @@ body.at-top .nav__logo{opacity:0;pointer-events:none}
 .hero__cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
 
 /* sections */
-.section{padding:90px 0}
+.section{--sec-pad:90px;padding:var(--sec-pad) 0;scroll-margin-top:calc(var(--nav-h,72px) - var(--sec-pad) + 20px)}
 .section--dark{background:var(--ink);color:#fff}
 .section--dark h2{color:#fff}
 
@@ -233,7 +233,6 @@ figcaption{font-size:15px;padding-top:10px}
 }
 @media (max-width:680px){
   body{font-size:16px;-webkit-text-size-adjust:100%}
-  html{scroll-padding-top:70px}
   h1{font-size:clamp(44px,13vw,64px)}
   h2{font-size:clamp(34px,10vw,48px)}
   .h2--xl{font-size:clamp(44px,13vw,64px)}
@@ -247,12 +246,12 @@ figcaption{font-size:15px;padding-top:10px}
   .hero__cta .btn{flex:1 1 100%;text-align:center}
   .nav__links a{padding:6px 0;font-size:16px}
   .nav__links .btn--small{padding:12px 22px;font-size:16px}
-  .section{padding-block:56px}
+  .section{--sec-pad:56px}
   .press__card,.highlights{padding:22px}
   .partners{gap:10px 36px;font-size:22px}
   .eventbar strong{font-size:22px}
   .book__qr{max-width:none}
-  .section{padding:64px 0}
+
   .datebar{grid-template-columns:1fr;gap:16px;padding:26px}
   .datebar__b{border-left:0;padding-left:0}
   .datebar .pill{justify-self:start}

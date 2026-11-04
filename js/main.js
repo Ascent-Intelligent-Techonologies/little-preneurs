@@ -59,3 +59,12 @@
     targets.forEach(t => io.observe(t));
   } else targets.forEach(t => t.classList.add('in'));
 })();
+
+// Keep anchor jumps flush under the sticky header (no extra gap)
+(() => {
+  const nav = document.querySelector('.nav');
+  const set = () => document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  set();
+  addEventListener('resize', set);
+  addEventListener('load', set);
+})();
