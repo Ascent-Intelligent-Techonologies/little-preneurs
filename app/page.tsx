@@ -279,8 +279,8 @@ export default function Home() {
       <p className="muted">Children aged 4–16 and their families, together in one room. Show them what your school stands for.</p>
       <p className="eyebrow">Schools that partnered with us in Season 1</p>
       <ul className="logos">
-        <li className="card">DPS Bachupally</li>
-        <li className="card">Orchids International</li>
+        <li className="card logo logo--text">DPS Bachupally</li>
+        <li className="card logo logo--dark"><img src="/assets/logos/orchids.webp" alt="Orchids International" width="190" height="56" loading="lazy" /></li>
       </ul>
     </div>
 
@@ -290,9 +290,9 @@ export default function Home() {
       <p className="muted">Meet parents and little founders in the warmest room in the city, and be remembered for being there.</p>
       <p className="eyebrow">Brands that partnered with us in Season 1</p>
       <ul className="logos logos--3">
-        <li className="card">Aretto Shoes</li>
-        <li className="card">Koh Foods</li>
-        <li className="card">Gamology</li>
+        <li className="card logo"><img src="/assets/logos/aretto.png" alt="Aretto Shoes" width="63" height="40" loading="lazy" /></li>
+        <li className="card logo"><img src="/assets/logos/koh.png" alt="Koh Foods" width="413" height="380" loading="lazy" /></li>
+        <li className="card logo logo--red"><img src="/assets/logos/gamology.png" alt="Gamology" width="1024" height="390" loading="lazy" /></li>
       </ul>
     </div>
 
@@ -302,8 +302,8 @@ export default function Home() {
       <p className="muted">Your support puts a table, a first customer and a lot of confidence in a child’s hands.</p>
       <p className="eyebrow">Sponsors who supported us in Season 1</p>
       <ul className="logos">
-        <li className="card">HDFC Bank</li>
-        <li className="card">Kotak Mahindra Bank</li>
+        <li className="card logo"><img src="/assets/logos/hdfc.svg" alt="HDFC Bank" width="178" height="35" loading="lazy" /></li>
+        <li className="card logo"><img src="/assets/logos/kotak.svg" alt="Kotak Mahindra Bank" width="129" height="32" loading="lazy" /></li>
       </ul>
     </div>
 
