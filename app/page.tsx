@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteEffects from "@/components/SiteEffects";
 import Snowfall from "@/components/Snowfall";
+import { EVENT } from "@/utils/event";
 
 export const metadata: Metadata = {
   title: "Littlepreneurs Season 02 · Christmas Special · T-Works Hyderabad",
   description:
-    "A marketplace run by kids. Littlepreneurs Season 02 Christmas Special: 20 December, 12–5 PM at T-Works, Hyderabad. Ages 4–16. Book a table for your little founder.",
+    "A marketplace run by kids. Littlepreneurs Season 02 Christmas Special: 20 December, 12–5 PM at T-Works, Hyderabad. Ages 4–16. Register a stall for your little founder, or come along as a visitor.",
   openGraph: {
     title: "Littlepreneurs Season 02 · Christmas Special",
     description: "Big futures start little. 20 December · T-Works, Hyderabad · Ages 4–16.",
@@ -29,7 +30,7 @@ export default function Home() {
     <a href="#table">Your table</a>
     <a href="#builders">Builders of Tomorrow</a>
     <a href="#watch">Watch</a>
-    <a href="#book">Book a table</a>
+    <a href="#partners">Partners</a>
     <Link className="btn btn--small" href="/register">Register</Link>
   </nav>
   <button className="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
@@ -159,7 +160,7 @@ export default function Home() {
         <li className="c-lav"><i>📖</i><h3>Keep upskilling</h3><p>Programmes + workshops</p></li>
         <li className="c-yellow"><i>🎶</i><h3>Explore hobbies</h3><p>Dance + food workshops</p></li>
         <li className="c-green"><i>🏋️</i><h3>Fitness for life</h3><p>Move + play + thrive</p></li>
-        <li className="c-pink"><i>❤️</i><h3>Give back</h3><p>10% of ticketing revenue will be given back.</p></li>
+        <li className="c-pink"><i>❤️</i><h3>Give back</h3><p>10% of every ticket goes to charity.</p></li>
       </ul>
     </div>
     <p className="tagline">Confidence. Curiosity. Community. Purpose.</p>
@@ -228,14 +229,19 @@ export default function Home() {
   <div className="wrap">
     <p className="eyebrow">Learning to give back</p>
     <h2>Big ideas.<br />Bigger hearts.</h2>
-    <p className="lede">Entrepreneurship is also about contributing to the society we share.</p>
+    <p className="lede">Entrepreneurship is also about contributing to the society we share. The best founders learn early that success is something you share.</p>
     <figure className="photo photo--wide"><img src="/assets/img/give-back.webp" alt="Mothers helping young children at a stall" width="1400" height="933" loading="lazy" /></figure>
     <div className="bigstat">
       <strong>10%</strong>
-      <p>of ticketing revenue will be given back.</p>
-      <small>Learning to create, earn and contribute.</small>
+      <p>of every ticket goes to a not-for-profit organisation.</p>
+      <small>Teaching children the joy of giving</small>
     </div>
-    <p className="quote__text">Build with ambition. Grow with empathy.</p>
+    <ul className="gstats">
+      <li><b>1,100</b><span>people came to Season 1. The bigger the crowd, the bigger the gift.</span></li>
+      <li><b>Every ticket</b><span>carries a little goodness, so every visitor gives back by simply showing up.</span></li>
+      <li><b>Ages 4–16</b><span>Children see first-hand that earning and giving can go hand in hand.</span></li>
+    </ul>
+    <p className="quote__text">Earn a little. Give a little. Grow a lot.</p>
   </div>
 </section>
 
@@ -257,10 +263,54 @@ export default function Home() {
         <span className="press__go">Read the article ↗</span>
       </a>
     </div>
-    <p className="eyebrow eyebrow--red">Season 1 supporters</p>
-    <div className="sponsors"><div className="card">HDFC Bank</div><div className="card">Kotak Mahindra Bank</div></div>
-    <p className="eyebrow">Season 1 brand partners</p>
-    <p className="partners"><span>Koh Foods</span><span>Aretto Shoes</span></p>
+  </div>
+</section>
+
+{/* PARTNERS */}
+<section className="section section--partners" id="partners">
+  <div className="wrap">
+    <p className="eyebrow">Partner with Littlepreneurs</p>
+    <h2>Be part of<br />what they build.</h2>
+    <p className="lede">Season 1 brought 1,100 people through the doors: young founders, the parents who back them, and a community that came to cheer.</p>
+
+    <div className="pgroup pgroup--school">
+      <p className="eyebrow eyebrow--red">School partnerships</p>
+      <h3 className="pgroup__title">Put your school where the target crowd is.</h3>
+      <p className="muted">Children aged 4–16 and their families, together in one room. Show them what your school stands for.</p>
+      <p className="eyebrow">Schools that partnered with us in Season 1</p>
+      <ul className="logos">
+        <li className="card">DPS Bachupally</li>
+        <li className="card">Orchids International</li>
+      </ul>
+    </div>
+
+    <div className="pgroup pgroup--brand">
+      <p className="eyebrow eyebrow--red">Brand partnerships</p>
+      <h3 className="pgroup__title">Where families gather, brands become part of the story.</h3>
+      <p className="muted">Meet parents and little founders in the warmest room in the city, and be remembered for being there.</p>
+      <p className="eyebrow">Brands that partnered with us in Season 1</p>
+      <ul className="logos logos--3">
+        <li className="card">Aretto Shoes</li>
+        <li className="card">Koh Foods</li>
+        <li className="card">Gamology</li>
+      </ul>
+    </div>
+
+    <div className="pgroup pgroup--sponsor">
+      <p className="eyebrow eyebrow--red">Sponsors</p>
+      <h3 className="pgroup__title">Backing the founders of tomorrow.</h3>
+      <p className="muted">Your support puts a table, a first customer and a lot of confidence in a child’s hands.</p>
+      <p className="eyebrow">Sponsors who supported us in Season 1</p>
+      <ul className="logos">
+        <li className="card">HDFC Bank</li>
+        <li className="card">Kotak Mahindra Bank</li>
+      </ul>
+    </div>
+
+    <div className="partner-cta">
+      <p className="partner-cta__text">Want your school, brand or business on this list?</p>
+      <a className="btn" href={`https://wa.me/${EVENT.contact.whatsapp}?text=${encodeURIComponent("Hi! I'd like to partner with Littlepreneurs Season 02 as a school / brand / sponsor.")}`} target="_blank" rel="noopener">Partner with us on WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -310,29 +360,11 @@ export default function Home() {
     <span className="pill pill--dark">Season 02</span>
     <h2>A table for their ideas.<br />A moment they’ll own.</h2>
 
-    <div className="book">
-      <div className="book__prices">
-        <p className="eyebrow">1 child / 1 table</p>
-        <p className="price">₹8,000</p>
-        <p className="muted">Per child, per table</p>
-        <hr />
-        <p className="eyebrow">2 children / 1 shared table</p>
-        <p className="price">₹10,000</p>
-        <p className="muted">Total for two children</p>
-        <span className="pill pill--yellow">Same category only</span>
-        <p className="muted small">Both children must be in the same category.</p>
-        <p className="limited">Limited slots only</p>
-      </div>
-      <div className="book__qr">
-        <p>Scan to book</p>
-        <img src="/assets/img/booking-qr.webp" alt="PhonePe QR code to book a table. Payee: Vasundhara Holdings" width="440" height="440" loading="lazy" />
-        <small>Payee</small>
-        <strong>Vasundhara Holdings</strong>
-      </div>
-    </div>
+    <p className="lede">Two children can share one table, as long as they are in the same category.</p>
+    <p className="limited">Limited slots only</p>
 
     <div className="book__cta">
-      <p className="eyebrow">Already paid, or visiting on the day?</p>
+      <p className="eyebrow">Ready to join us?</p>
       <div className="hero__cta">
         <Link className="btn" href="/register?type=stall">Register your stall</Link>
         <Link className="btn btn--ghost" href="/register?type=guest">Get a visitor pass</Link>

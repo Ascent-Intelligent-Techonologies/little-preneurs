@@ -18,8 +18,6 @@ export const EVENT = {
   closedNote: "Walk in on the day and meet us at the T-Works reception, and we'll help you from there.",
   guestInvite: "Come see what little founders can build.",
   stallInvite: "A table for their ideas. A moment they'll own.",
-  // Table pricing from the brochure (shown on the stall form for reference only).
-  prices: { single: "₹8,000", shared: "₹10,000" },
   // Stall categories. Two children sharing a table must be in the same category.
   categories: [
     "Food & beverages",

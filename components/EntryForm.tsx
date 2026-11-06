@@ -162,11 +162,11 @@ export default function EntryForm({
             <legend className="field-label">Table</legend>
             <label className="opt" data-on={tableType === "single"}>
               <input type="radio" name="table" checked={tableType === "single"} onChange={() => setTableType("single")} />
-              <div><strong>1 child / 1 table</strong><span>{EVENT.prices.single} per child, per table</span></div>
+              <div><strong>1 child / 1 table</strong><span>One child, one table</span></div>
             </label>
             <label className="opt" data-on={tableType === "shared"}>
               <input type="radio" name="table" checked={tableType === "shared"} onChange={() => setTableType("shared")} />
-              <div><strong>2 children / 1 shared table</strong><span>{EVENT.prices.shared} total · same category only</span></div>
+              <div><strong>2 children / 1 shared table</strong><span>Two children, same category only</span></div>
             </label>
           </fieldset>
 
@@ -194,9 +194,6 @@ export default function EntryForm({
             </div>
           )}
 
-          <p className="field-hint subform" style={{ marginTop: 0 }}>
-            Table fee: {EVENT.prices.single} for 1 child, or {EVENT.prices.shared} for 2 children sharing. Pay via the QR in the <a href="/#book" style={{ textDecoration: "underline" }}>booking section</a>.
-          </p>
         </>
       )}
 

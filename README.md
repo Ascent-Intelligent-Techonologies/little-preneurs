@@ -46,7 +46,7 @@ Phone numbers are stored in E.164 (`+919876543210`); numbers without a country c
 
 ## Customising
 
-- Event name, date, venue, categories, ages, prices and open/closed switch: `utils/event.ts` (set `registrationOpen: false` to close public sign-ups; staff can still register from `/onboard`).
+- Event name, date, venue, categories, ages and open/closed switch: `utils/event.ts` (set `registrationOpen: false` to close public sign-ups; staff can still register from `/onboard`).
 - Marketing page: `app/page.tsx` (markup) and `app/globals.css` (styles); behaviour in `components/SiteEffects.tsx`.
 - Video embeds: the `data-embed` URLs in the Watch section of `app/page.tsx`.
 
