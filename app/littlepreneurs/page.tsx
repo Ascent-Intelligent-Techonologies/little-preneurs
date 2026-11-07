@@ -378,6 +378,19 @@ export default function Home() {
         <img src="/assets/img/booking-qr.webp" alt="PhonePe QR code to book a table. Payee: Vasundhara Holdings" width="440" height="440" loading="lazy" />
         <small>Payee</small>
         <strong>Vasundhara Holdings</strong>
+        <div className="book__queries">
+          <small>For queries</small>
+          <p>
+            <strong>Priyanjana</strong> · Founder, Late Checkout
+            <br />
+            <a href="tel:+919618882124">96188 82124</a>
+          </p>
+          <p>
+            <strong>Deepa</strong> · Founder, Dolce Amore
+            <br />
+            <a href="tel:+919030015909">90300 15909</a>
+          </p>
+        </div>
       </div>
     </div>
 
