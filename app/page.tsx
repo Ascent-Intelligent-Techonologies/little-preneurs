@@ -31,7 +31,7 @@ export default function Home() {
     <a href="#builders">Builders of Tomorrow</a>
     <a href="#watch">Watch</a>
     <a href="#partners">Partners</a>
-    <Link className="btn btn--small" href="/register">Register</Link>
+    {EVENT.showRegisterButtons && <Link className="btn btn--small" href="/register">Register</Link>}
   </nav>
   <button className="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
 </header>
@@ -71,10 +71,12 @@ export default function Home() {
       <div className="datebar__b"><strong>T-Works</strong><span>Hyderabad</span></div>
       <a className="pill pill--yellow" href="#book">Ages 4–16</a>
     </div>
-    <div className="hero__cta">
-      <Link className="btn" href="/register?type=stall">Register your stall</Link>
-      <Link className="btn btn--ghost" href="/register?type=guest">Visiting? Get your pass</Link>
-    </div>
+    {EVENT.showRegisterButtons && (
+      <div className="hero__cta">
+        <Link className="btn" href="/register?type=stall">Register your stall</Link>
+        <Link className="btn btn--ghost" href="/register?type=guest">Visiting? Get your pass</Link>
+      </div>
+    )}
   </div>
 </section>
 
@@ -360,16 +362,36 @@ export default function Home() {
     <span className="pill pill--dark">Season 02</span>
     <h2>A table for their ideas.<br />A moment they’ll own.</h2>
 
-    <p className="lede">Two children can share one table, as long as they are in the same category.</p>
-    <p className="limited">Limited slots only</p>
-
-    <div className="book__cta">
-      <p className="eyebrow">Ready to join us?</p>
-      <div className="hero__cta">
-        <Link className="btn" href="/register?type=stall">Register your stall</Link>
-        <Link className="btn btn--ghost" href="/register?type=guest">Get a visitor pass</Link>
+    <div className="book">
+      <div className="book__prices">
+        <p className="eyebrow">1 child / 1 table</p>
+        <p className="price">₹8,000</p>
+        <p className="muted">Per child, per table</p>
+        <hr />
+        <p className="eyebrow">2 children / 1 shared table</p>
+        <p className="price">₹10,000</p>
+        <p className="muted">Total for two children</p>
+        <span className="pill pill--yellow">Same category only</span>
+        <p className="muted small">Both children must be in the same category.</p>
+        <p className="limited">Limited slots only</p>
+      </div>
+      <div className="book__qr">
+        <p>Scan to book</p>
+        <img src="/assets/img/booking-qr.webp" alt="PhonePe QR code to book a table. Payee: Vasundhara Holdings" width="440" height="440" loading="lazy" />
+        <small>Payee</small>
+        <strong>Vasundhara Holdings</strong>
       </div>
     </div>
+
+    {EVENT.showRegisterButtons && (
+      <div className="book__cta">
+        <p className="eyebrow">Already paid, or visiting on the day?</p>
+        <div className="hero__cta">
+          <Link className="btn" href="/register?type=stall">Register your stall</Link>
+          <Link className="btn btn--ghost" href="/register?type=guest">Get a visitor pass</Link>
+        </div>
+      </div>
+    )}
 
     <div className="eventbar">
       <strong>20 December</strong><strong>T-Works</strong><strong>12–5 PM</strong>

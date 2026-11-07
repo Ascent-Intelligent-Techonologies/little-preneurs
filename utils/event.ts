@@ -14,6 +14,9 @@ export const EVENT = {
   // public (unauthenticated) create endpoint is reachable — see proxy.ts.
   // Staff can always register from /onboard.
   registrationOpen: true,
+  // Show the Register buttons on the landing page (nav, hero, booking). The
+  // /register page itself still works for anyone with the link.
+  showRegisterButtons: false,
   closedTitle: "Registrations have closed.",
   closedNote: "Walk in on the day and meet us at the T-Works reception, and we'll help you from there.",
   guestInvite: "Come see what little founders can build.",

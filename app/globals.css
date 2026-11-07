@@ -184,7 +184,15 @@ figcaption{font-size:15px;padding-top:10px}
 
 /* booking */
 .section--book{padding-bottom:70px;border-top:1px solid var(--line)}
+.book{display:grid;grid-template-columns:1fr 360px;gap:50px;align-items:start;margin:40px 0}
+.price{font-family:var(--f-head);font-size:clamp(56px,8vw,88px);color:var(--red);line-height:1.1;margin:6px 0 4px}
+.book hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.book .pill{margin:16px 0 8px}
 .limited{font-family:var(--f-mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-top:22px}
+.book__qr{background:var(--ink);color:#fff;border-radius:var(--r);padding:30px;text-align:center}
+.book__qr p{font-family:var(--f-head);letter-spacing:.08em;text-transform:uppercase;font-size:20px;margin-bottom:16px}
+.book__qr img{width:100%;border-radius:10px;background:#0d0d0d}
+.book__qr small{display:block;margin-top:18px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9db3bd}
 .eventbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:26px 0 0;border-top:1px solid var(--line)}
 .eventbar strong{font-family:var(--f-head);font-weight:400;font-size:clamp(22px,3vw,32px);text-transform:uppercase}
 .eventbar span{width:100%;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -215,7 +223,9 @@ figcaption{font-size:15px;padding-top:10px}
   .nav__links.open{display:flex}
   .circle{grid-template-columns:1fr}
   .circle__core{max-width:300px;margin-inline:auto}
-  }
+  .book{grid-template-columns:1fr}
+  .book__qr{max-width:380px}
+}
 @media (max-width:680px){
   body{font-size:16px;-webkit-text-size-adjust:100%}
   h1{font-size:clamp(44px,13vw,64px)}
@@ -233,8 +243,8 @@ figcaption{font-size:15px;padding-top:10px}
   .nav__links .btn--small{padding:12px 22px;font-size:16px}
   .section{--sec-pad:56px}
   .press__card,.highlights{padding:22px}
-    .eventbar strong{font-size:22px}
-  
+  .eventbar strong{font-size:22px}
+  .book__qr{max-width:none}
   .datebar{grid-template-columns:1fr;gap:16px;padding:26px}
   .datebar__b{border-left:0;padding-left:0}
   .datebar .pill{justify-self:start}
