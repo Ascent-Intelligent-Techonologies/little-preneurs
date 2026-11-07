@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import EntryForm from "@/components/EntryForm";
 import PageHeader from "@/components/PageHeader";
 import PublicBar from "@/components/PublicBar";
-import Snowfall from "@/components/Snowfall";
 import { EVENT } from "@/utils/event";
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default async function RegisterPage({
 
   return (
     <div className="app">
-      <Snowfall />
       <PublicBar />
       <main className="app__main">
         <PageHeader eyebrow={`${EVENT.edition} · ${EVENT.dateShort}, ${EVENT.hours}`} title="Register for Season 02">

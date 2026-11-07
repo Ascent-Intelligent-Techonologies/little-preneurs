@@ -595,6 +595,8 @@ ul { list-style: none; }
 .event-card__art--pink  { background: var(--pink); }
 .event-card__art--green { background: var(--green); }
 .event-card__art--navy  { background: var(--navy); }
+.event-card__art--xmas  { background: linear-gradient(160deg, #1D6340, #0F3322); }
+.event-card__art-emoji  { font-size: 3.2rem; line-height: 1; }
 .event-card__art-squares {
   display: grid;
   grid-template-columns: repeat(2, 34px);
@@ -1152,4 +1154,29 @@ ul { list-style: none; }
 .footer__credit a { color: inherit; text-decoration: underline; }
 @media (max-width: 768px) {
   .insta__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+
+/* ============ CHRISTMAS EDITION (upcoming feature) ============ */
+.moodboard--xmas {
+  position: relative;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 2px) 0 0 / 46px 46px,
+    radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1.5px) 23px 23px / 46px 46px,
+    linear-gradient(165deg, #1B5A3A 0%, #12402A 55%, #0C2E1E 100%);
+}
+.moodboard--xmas::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 0; height: 10px;
+  background: repeating-linear-gradient(135deg, #C8283A 0 16px, #FBF4E8 16px 32px);
+}
+.moodboard--xmas .moodboard__tag,
+.moodboard--xmas .moodboard__eyebrow,
+.moodboard--xmas .mstat__num { color: #F2C14E; }
+.moodboard--xmas .mstat { background: rgba(7,32,20,0.62); }
+.moodboard--xmas .mood-card--navy { border-left-color: #C8283A; }
+.moodboard__art { flex-shrink: 0; width: 190px; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.35)); }
+.moodboard__art svg { display: block; width: 100%; height: auto; }
+@media (max-width: 768px) {
+  .moodboard__art { width: 130px; }
 }

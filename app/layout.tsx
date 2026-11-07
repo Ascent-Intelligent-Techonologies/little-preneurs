@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Snowfall from "@/components/Snowfall";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-outfit", display: "swap" });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-dm-sans", display: "swap" });
@@ -22,7 +23,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Snowfall />
+        {children}
+      </body>
     </html>
   );
 }
