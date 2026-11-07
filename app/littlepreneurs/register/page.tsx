@@ -38,7 +38,7 @@ export default async function RegisterPage({
         )}
       </main>
       <p className="app__foot">
-        By {EVENT.presenter} · <a href="/login">Staff login</a>
+        By {EVENT.presenter} · <a href="/littlepreneurs/login">Staff login</a>
       </p>
     </div>
   );

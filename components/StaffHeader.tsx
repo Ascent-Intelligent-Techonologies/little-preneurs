@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import LogoutButton from "./LogoutButton";
 
 const LINKS = [
-  { href: "/verify", label: "Scan" },
-  { href: "/onboard", label: "Register" },
-  { href: "/admin", label: "Search" },
-  { href: "/guests", label: "Guests" },
+  { href: "/littlepreneurs/verify", label: "Scan" },
+  { href: "/littlepreneurs/onboard", label: "Register" },
+  { href: "/littlepreneurs/admin", label: "Search" },
+  { href: "/littlepreneurs/guests", label: "Guests" },
 ];
 
 export default function StaffHeader() {
@@ -18,7 +18,7 @@ export default function StaffHeader() {
     <header>
       <div className="app__bar">
         <div className="app__bar-in">
-          <Link href="/verify" className="app__brand">
+          <Link href="/littlepreneurs/verify" className="app__brand">
             <img src="/assets/img/logo.webp" alt="LittlePreneurs" width={102} height={34} />
             <span className="eyebrow">Staff</span>
           </Link>

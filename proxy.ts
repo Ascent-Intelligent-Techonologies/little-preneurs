@@ -19,15 +19,23 @@ async function expectedToken(): Promise<string | null> {
     .join("");
 }
 
-// Everything is admin-gated by default except: the public registration
-// page, the root redirect, login itself, and — while the guest list is
-// open — the create endpoint the public form posts to.
-const PUBLIC_PAGES = new Set(["/", "/register", "/login"]);
+// The Littlepreneurs staff tools (/littlepreneurs/verify, /onboard, /admin,
+// /guests) and the API are admin-gated. Public: the Littlepreneurs landing
+// page, its registration page, login itself, and — while the guest list is
+// open — the create endpoint the public form posts to. The Late Checkout
+// site at / is static and never gated.
+const LP = "/littlepreneurs";
+const PUBLIC_PAGES = new Set(["/", LP, `${LP}/register`, `${LP}/login`]);
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (PUBLIC_PAGES.has(pathname)) {
+  const normalised = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  if (PUBLIC_PAGES.has(normalised)) {
+    return NextResponse.next();
+  }
+  // Only the staff tools and the API are gated; anything else is just a 404.
+  if (!pathname.startsWith(`${LP}/`) && !pathname.startsWith("/api/")) {
     return NextResponse.next();
   }
   if (pathname.startsWith("/api/auth")) {
@@ -48,7 +56,7 @@ export async function proxy(request: NextRequest) {
     if (pathname.startsWith("/api/")) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    const loginUrl = new URL("/login", request.url);
+    const loginUrl = new URL(`${LP}/login`, request.url);
     loginUrl.searchParams.set("next", pathname);
     return NextResponse.redirect(loginUrl);
   }

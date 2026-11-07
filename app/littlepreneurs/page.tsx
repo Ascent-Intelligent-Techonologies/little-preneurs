@@ -31,7 +31,7 @@ export default function Home() {
     <a href="#builders">Builders of Tomorrow</a>
     <a href="#watch">Watch</a>
     <a href="#partners">Partners</a>
-    {EVENT.showRegisterButtons && <Link className="btn btn--small" href="/register">Register</Link>}
+    {EVENT.showRegisterButtons && <Link className="btn btn--small" href="/littlepreneurs/register">Register</Link>}
   </nav>
   <button className="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
 </header>
@@ -73,8 +73,8 @@ export default function Home() {
     </div>
     {EVENT.showRegisterButtons && (
       <div className="hero__cta">
-        <Link className="btn" href="/register?type=stall">Register your stall</Link>
-        <Link className="btn btn--ghost" href="/register?type=guest">Visiting? Get your pass</Link>
+        <Link className="btn" href="/littlepreneurs/register?type=stall">Register your stall</Link>
+        <Link className="btn btn--ghost" href="/littlepreneurs/register?type=guest">Visiting? Get your pass</Link>
       </div>
     )}
   </div>
@@ -387,8 +387,8 @@ export default function Home() {
       <div className="book__cta">
         <p className="eyebrow">Already paid, or visiting on the day?</p>
         <div className="hero__cta">
-          <Link className="btn" href="/register?type=stall">Register your stall</Link>
-          <Link className="btn btn--ghost" href="/register?type=guest">Get a visitor pass</Link>
+          <Link className="btn" href="/littlepreneurs/register?type=stall">Register your stall</Link>
+          <Link className="btn btn--ghost" href="/littlepreneurs/register?type=guest">Get a visitor pass</Link>
         </div>
       </div>
     )}
@@ -411,8 +411,8 @@ export default function Home() {
 <footer className="footer">
   <div className="wrap footer__in">
     <span>Littlepreneurs / Season 02</span>
-    <span>By Late Checkout + Dolce Amore · T-Works, Hyderabad</span>
-    <span><Link href="/login">Staff login</Link> · <a href="#top">Back to top ↑</a></span>
+    <span>By <Link href="/">Late Checkout</Link> + Dolce Amore · T-Works, Hyderabad</span>
+    <span><Link href="/littlepreneurs/login">Staff login</Link> · <a href="#top">Back to top ↑</a></span>
   </div>
 </footer>
 

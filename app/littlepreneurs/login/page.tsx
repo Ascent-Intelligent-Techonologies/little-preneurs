@@ -10,9 +10,9 @@ function LoginForm() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const requested = searchParams.get("next") || "/verify";
+  const requested = searchParams.get("next") || "/littlepreneurs/verify";
   // Only follow same-site paths.
-  const next = requested.startsWith("/") && !requested.startsWith("//") ? requested : "/verify";
+  const next = requested.startsWith("/") && !requested.startsWith("//") ? requested : "/littlepreneurs/verify";
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
